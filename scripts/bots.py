@@ -14,7 +14,7 @@ class Moving_average_bot:
   def make_decision (self):
     cur_price = self.stock.cur_price
     last_price = self.stock.past_price[0]
-    moving_average = self.stock.moving_average(self.stock.cur_price, self.n)
+    moving_average = self.stock.moving_average(0, self.n)
     if last_price < moving_average and cur_price > moving_average:
       return 'buy'
     elif last_price > moving_average and cur_price < moving_average:
