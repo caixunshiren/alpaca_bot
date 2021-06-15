@@ -27,6 +27,9 @@ class Stocks_manager_naive:
                         action_dict[symbol] = n_shares
                     bot.balance = balance - n_shares * share_price
                     bot.shares = n_shares
+
+                    print("-> buying", symbol, "for", n_shares, "shares.")
+
             elif decision == 'sell':
                 if bot.shares != 0:
                     if symbol in action_dict.keys():
@@ -35,6 +38,11 @@ class Stocks_manager_naive:
                         action_dict[symbol] = -1 * bot.shares
                     bot.balance += bot.shares * share_price
                     bot.shares = 0
+
+                    print("-> Selling", symbol, "for", bot.shares, "shares.")
+
+        if action_dict == {}:
+            print("--- No action performed at this time ---")
         return action_dict
 
 
