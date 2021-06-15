@@ -35,8 +35,8 @@ class Macd_bot:
     arr = self.stock.past_price
     cur = self.stock.cur_price
     yesterday = self.stock.past_price[0]
-    current_macd = self.stock.macd(self, cur, arr)
-    yesterday_macd = self.stock.macd(self, yesterday, arr[1:])
+    current_macd = self.stock.macd(cur, arr)
+    yesterday_macd = self.stock.macd(yesterday, arr[1:])
     if current_macd > 0 and yesterday_macd < 0:
       return 'buy'
     elif current_macd < 0 and yesterday_macd > 0:
