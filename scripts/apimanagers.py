@@ -106,7 +106,7 @@ class APImanager(): # API manager for Alpaca
       
   
 
-  def sell_stocks(self, symbol, qty, side):
+  def sell_stocks(self, symbol, qty):
     """
     Sell the stock specified 
     

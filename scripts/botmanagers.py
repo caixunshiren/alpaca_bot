@@ -39,7 +39,7 @@ class Stocks_manager_naive:
                     bot.balance += bot.shares * share_price
                     bot.shares = 0
 
-                    print("-> Selling", symbol, "for", bot.shares, "shares.")
+                    print("-> Selling", int(-1*action_dict[symbol]) , "for", bot.shares, "shares.")
 
         if action_dict == {}:
             print("--- No action performed at this time ---")
