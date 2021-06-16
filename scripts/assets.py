@@ -46,6 +46,8 @@ class Stock:
     returns:
     None
     '''
+    #print("------")
+    #print(bar, bar_t)
     self.cur_price = cur_price
     self.time = t
     if bar == [] or bar_t == []:
@@ -53,9 +55,9 @@ class Stock:
     if self.closing_t < bar_t[-1]:
         self.past_price = np.insert(self.past_price, 0, bar[-1])
         self.closing_t = bar_t[-1]
-        self.update(cur_price, bar[:-1], t, bar_t[:-1])
-    elif self.closing_t > bar_t[-1]:
-        self.update(cur_price, bar[:-1], t, bar_t[:-1])
+        self.update(cur_price, bar[:-1], bar_t[:-1],t)
+    elif self.closing_t >= bar_t[-1]:
+        self.update(cur_price, bar[:-1], bar_t[:-1],t)
 
   def macd(self, cur, arr):
     return self.EMA(12, cur, arr) - self.EMA(26, cur, arr)
