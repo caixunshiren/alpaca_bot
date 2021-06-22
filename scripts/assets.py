@@ -95,8 +95,8 @@ class Stock:
       prices = self.past_price[::-1]
       prices = np.append(prices, self.cur_price)
       plt.plot(range(past_pts), prices[-past_pts:], label = "prices")
-      plt.plot(range(past_pts), ma_prices5, label = "5 pts moving average")
-      plt.plot(range(past_pts), ma_prices10, label = "10 pts moving average")
+      #plt.plot(range(past_pts), ma_prices5, label = "5 pts moving average")
+      #plt.plot(range(past_pts), ma_prices10, label = "10 pts moving average")
       plt.plot(range(past_pts), ema_prices12, label = "12 pts exponential moving average")
       plt.plot(range(past_pts), ema_prices26, label = "26 pts exponential moving average")
       plt.title(self.symbol + " Prices")
